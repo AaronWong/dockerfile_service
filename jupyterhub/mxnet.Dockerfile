@@ -5,4 +5,4 @@ RUN conda install -y \
     matplotlib \
     pandas \
     mxnet 
-RUN python3 -m pip install -y d2lzh
+RUN python3 -m pip install --no-cache-dir d2lzh
