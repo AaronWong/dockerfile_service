@@ -1,4 +1,4 @@
-From jupyterhub/jupyterhub:latest
+From jupyter/datascience-notebook:latest
 LABEL maintainer Aaron "wanglj@ibbd.net"
 
 RUN conda install -y \
