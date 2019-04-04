@@ -15,8 +15,7 @@ RUN python3 -m pip install -U setuptools \
         pandas \
         scipy \
         scikit-learn \
-        jupyterlab \
-        matlab_kernel
+        jupyterlab 
   
 # 安装服务常用包
 RUN python3 -m pip --no-cache-dir install \
@@ -36,7 +35,6 @@ RUN apt-get -y update && \
         pkg-config \
         libatlas-base-dev \
         gfortran \
-        libjasper-dev \
         libgtk2.0-dev \
         libavcodec-dev \
         libavformat-dev \
