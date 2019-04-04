@@ -1,4 +1,4 @@
-# create 
+# create registry.cn-shenzhen.aliyuncs.com/tsinghua_gd/jupyter:base
 
 # Pull base image.
 FROM tensorflow/tensorflow:1.12.0-gpu-py3
