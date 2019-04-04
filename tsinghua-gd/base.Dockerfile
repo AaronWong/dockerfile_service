@@ -15,7 +15,8 @@ RUN python3 -m pip install -U setuptools \
         pandas \
         scipy \
         scikit-learn \
-        jupyterlab
+        jupyterlab \
+        matlab_kernel
   
 # 安装服务常用包
 RUN python3 -m pip --no-cache-dir install \
