@@ -42,7 +42,7 @@ $ sudo service docker start
 $ sudo docker run hello-world
 ```
 
-### nvidia-smi 安装
+### nvidia-docker 安装
 ```shell
 # If you have nvidia-docker 1.0 installed: we need to remove it and all existing GPU containers
 docker volume ls -q -f driver=nvidia-docker | xargs -r -I{} -n1 docker ps -q -a -f volume={} | xargs -r docker rm -f
