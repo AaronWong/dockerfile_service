@@ -1,6 +1,6 @@
 ## Dockerfile文件
 
-```base.Dockerfile```
+```./jupyter/base.Dockerfile```
 
 ## path
 
