@@ -14,8 +14,13 @@ RUN python3 -m pip install -U setuptools \
         numpy \
         pandas \
         scipy \
-        scikit-learn 
-  
+        scikit-learn \
+        keras
+        
+# 安装 python 常用包
+RUN python3 -m pip --no-cache-dir install \
+    tqdm 
+    
 # 安装服务常用包
 RUN python3 -m pip --no-cache-dir install \
     flask \
@@ -44,12 +49,8 @@ RUN apt-get -y update && \
         libjasper-dev \
         libv4l-dev 
 
-# Install OpenCV
+# Install OpenCV==3.4.5
 RUN python3 -m pip --no-cache-dir install opencv-python==3.4.5.20
-
-# 安装 python 常用包
-RUN python3 -m pip --no-cache-dir install \
-    tqdm 
     
 # 删除 apt lists
 RUN rm -rf /var/lib/apt/lists/*
