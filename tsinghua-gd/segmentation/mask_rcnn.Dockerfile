@@ -54,6 +54,9 @@ RUN python3 -m pip --no-cache-dir install opencv-python==3.4.5.20
 # 删除 apt lists
 RUN rm -rf /var/lib/apt/lists/*
 
+# 删除 tensorflow 安装包
+RUN rm /tensorflow_gpu-1.12.0-cp35-cp35m-manylinux1_x86_64.whl
+
 # 终端设置
 # 默认值是dumb，这时在终端操作时可能会出现：terminal is not fully functional
 # ENV TERM xterm
