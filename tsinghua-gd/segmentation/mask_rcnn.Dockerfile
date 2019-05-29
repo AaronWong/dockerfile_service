@@ -1,7 +1,7 @@
 # create registry.cn-shenzhen.aliyuncs.com/tsinghua_gd/segmentation:mask_rcnn
 
 # Pull base image.
-FROM tensorflow/tensorflow:1.12.0-gpu-py3
+FROM tensorflow/tensorflow:1.10.0-gpu-py3
 
 LABEL maintainer Aaron "aaronwlj@foxmail.com"
 
@@ -55,7 +55,7 @@ RUN python3 -m pip --no-cache-dir install opencv-python==3.4.5.20
 RUN rm -rf /var/lib/apt/lists/*
 
 # 删除 tensorflow 安装包
-RUN rm /tensorflow_gpu-1.12.0-cp35-cp35m-manylinux1_x86_64.whl
+# RUN rm /tensorflow_gpu-1.12.0-cp35-cp35m-manylinux1_x86_64.whl
 
 # 终端设置
 # 默认值是dumb，这时在终端操作时可能会出现：terminal is not fully functional
