@@ -5,31 +5,12 @@ FROM nvidia/cuda:10.0-cudnn7-devel
 
 LABEL maintainer Aaron "aaronwlj@foxmail.com"
 
-# pip 升级
-RUN python3 -m pip install --upgrade pip
-
-# 安装基础库
-RUN python3 -m pip install -U setuptools \
-    && python3 -m pip --no-cache-dir install \
-        numpy \
-        pandas \
-        scipy \
-        scikit-learn \
-        jupyterlab 
-  
-# 安装服务常用包
-RUN python3 -m pip --no-cache-dir install \
-    flask \
-    flask-restful \
-    flask_jsonrpc \
-    fire \
-    requests_toolbelt 
-
-# Install all dependencies for OpenCV
+# Install dependencies
 RUN apt-get -y update && \
     DEBIAN_FRONTEND=noninteractive \
     apt-get install -y --no-install-recommends \
         python3-dev \
+        python3-pip \
         git \
         g++ \
         make \
@@ -56,12 +37,32 @@ RUN apt-get -y update && \
         libcaffe-cuda-dev \
         libhdf5-dev \
         libatlas-base-dev
+     
+# pip 升级
+# RUN python3 -m pip install --upgrade pip
+
+# 安装基础库
+RUN pip3 install -U setuptools \
+    && python3 -m pip --no-cache-dir install \
+        numpy \
+        pandas \
+        scipy \
+        scikit-learn \
+        jupyterlab 
+  
+# 安装服务常用包
+RUN pip3 --no-cache-dir install \
+    flask \
+    flask-restful \
+    flask_jsonrpc \
+    fire \
+    requests_toolbelt 
 
 # Install tensorflow-gpu
-RUN python3 -m pip --no-cache-dir install tensorflow-gpu==1.12
+RUN pip3 --no-cache-dir install tensorflow-gpu==1.12
 
 # Install OpenCV
-RUN python3 -m pip --no-cache-dir install opencv-python==3.4.5.20
+RUN pip3 --no-cache-dir install opencv-python==3.4.5.20
 
 # Install pytorch-1.0.1
 RUN python3 -m pip --no-cache-dir install \
@@ -71,8 +72,8 @@ RUN python3 -m pip --no-cache-dir install \
 
 # 安装openpose
 # ENV
-ENV PYTHON_EXECUTABLE="/usr/bin/python3.5"
-ENV PYTHON_LIBRARY="/usr/lib/x86_64-linux-gnu/libpython3.5m.so"
+ENV PYTHON_EXECUTABLE="/usr/bin/python3.6"
+ENV PYTHON_LIBRARY="/usr/lib/x86_64-linux-gnu/libpython3.6m.so"
 
 # replace cmake as old version has CUDA variable bugs
 RUN wget https://github.com/Kitware/CMake/releases/download/v3.14.2/cmake-3.14.2-Linux-x86_64.tar.gz && \
