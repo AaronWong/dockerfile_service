@@ -51,7 +51,7 @@ RUN apt-get -y update && \
 
 # 安装基础库
 RUN pip3 install -U setuptools \
-    && python3 -m pip --no-cache-dir install \
+    && pip3 --no-cache-dir install \
         numpy \
         pandas \
         scipy \
@@ -104,7 +104,7 @@ RUN cd /root/ && \
     cd /root/dlib && \
     python3 setup.py install && \
     cd .. && \
-rm -r /root/dlib
+    rm -r /root/dlib
 
 # 删除 apt lists
 RUN rm -rf /var/lib/apt/lists/*
