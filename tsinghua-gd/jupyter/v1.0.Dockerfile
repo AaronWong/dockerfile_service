@@ -56,8 +56,9 @@ RUN pip3 install -U setuptools \
         pandas \
         scipy \
         scikit-learn \
-        jupyterlab 
-  
+        jupyterlab \
+        tqdm
+
 # 安装服务常用包
 RUN pip3 --no-cache-dir install \
     flask \
