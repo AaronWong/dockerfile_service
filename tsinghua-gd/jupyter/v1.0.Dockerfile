@@ -27,7 +27,8 @@ RUN python3 -m pip --no-cache-dir install \
 
 # Install all dependencies for OpenCV
 RUN apt-get -y update && \
-    apt-get -y install \
+    DEBIAN_FRONTEND=noninteractive \
+    apt-get install -y --no-install-recommends \
         python3-dev \
         git \
         g++ \
