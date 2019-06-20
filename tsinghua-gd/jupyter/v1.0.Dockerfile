@@ -58,7 +58,8 @@ RUN pip3 install -U setuptools \
         scikit-learn \
         jupyterlab \
         tqdm \
-        matplotlib
+        matplotlib \
+        imgaug
 
 # 安装服务常用包
 RUN pip3 --no-cache-dir install \
