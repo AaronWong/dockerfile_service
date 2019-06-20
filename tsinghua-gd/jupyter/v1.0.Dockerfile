@@ -6,6 +6,10 @@ FROM nvidia/cuda:10.0-cudnn7-devel
 LABEL maintainer Aaron "aaronwlj@foxmail.com"
 
 # Install dependencies
+RUN apt-get -y update && \
+    apt-get install -y --no-install-recommends \
+    python-software-properties\
+    software-properties-common
 RUN add-apt-repository "deb http://security.ubuntu.com/ubuntu xenial-security main"
 RUN apt-get -y update && \
     DEBIAN_FRONTEND=noninteractive \
