@@ -8,8 +8,11 @@ LABEL maintainer Aaron "aaronwlj@foxmail.com"
 # Install dependencies
 RUN apt-get -y update && \
     apt-get install -y --no-install-recommends \
-    python-software-properties\
-    software-properties-common
+    software-properties-common \
+    dirmngr \
+    apt-transport-https \
+    lsb-release \
+    ca-certificates
 RUN add-apt-repository "deb http://security.ubuntu.com/ubuntu xenial-security main"
 RUN apt-get -y update && \
     DEBIAN_FRONTEND=noninteractive \
