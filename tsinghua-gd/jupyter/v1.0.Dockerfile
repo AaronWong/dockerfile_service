@@ -1,7 +1,7 @@
 # create registry.cn-shenzhen.aliyuncs.com/tsinghua_gd/jupyter:v1.0
 
 # Pull base image.
-FROM tensorflow/tensorflow:1.12.0-gpu-py3
+FROM nvidia/cuda:10.0-cudnn7-devel
 
 LABEL maintainer Aaron "aaronwlj@foxmail.com"
 
@@ -53,9 +53,12 @@ RUN apt-get -y update && \
         libopencv-dev \
         libgoogle-glog-dev \
         libboost-all-dev \
-#         libcaffe-cuda-dev \
+        libcaffe-cuda-dev \
         libhdf5-dev \
         libatlas-base-dev
+
+# Install tensorflow-gpu
+RUN python3 -m pip --no-cache-dir install tensorflow-gpu==1.12
 
 # Install OpenCV
 RUN python3 -m pip --no-cache-dir install opencv-python==3.4.5.20
@@ -85,6 +88,14 @@ RUN git clone https://github.com/CMU-Perceptual-Computing-Lab/openpose.git .
 WORKDIR /opt/openpose/build
 RUN cmake -DBUILD_PYTHON=ON .. && make -j8 && make install
 WORKDIR /root
+
+# 安装 DLIB
+RUN cd /root/ && \
+    git clone https://github.com/davisking/dlib.git && \
+    cd /root/dlib && \
+    python3 setup.py install && \
+    cd .. && \
+rm -r /root/dlib
 
 # 删除 apt lists
 RUN rm -rf /var/lib/apt/lists/*
