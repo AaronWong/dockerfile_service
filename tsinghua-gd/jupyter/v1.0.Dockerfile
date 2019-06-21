@@ -12,7 +12,8 @@ RUN apt-get -y update && \
     dirmngr \
     apt-transport-https \
     lsb-release \
-    ca-certificates
+    ca-certificates \
+    openssh-server
 RUN add-apt-repository "deb http://security.ubuntu.com/ubuntu xenial-security main"
 RUN apt-get -y update && \
     DEBIAN_FRONTEND=noninteractive \
