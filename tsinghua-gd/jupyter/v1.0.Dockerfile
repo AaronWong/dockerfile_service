@@ -71,7 +71,7 @@ RUN pip3 --no-cache-dir install \
     requests_toolbelt 
 
 # Install tensorflow-gpu
-RUN pip3 --no-cache-dir install tensorflow-gpu==1.13
+RUN pip3 --no-cache-dir install tensorflow-gpu==1.13.1
 
 # Install OpenCV
 RUN pip3 --no-cache-dir install opencv-python==3.4.5.20
