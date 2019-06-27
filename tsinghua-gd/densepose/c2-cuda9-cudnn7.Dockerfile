@@ -30,7 +30,8 @@ RUN make
 RUN make ops
 
 # 安装基础库
-RUN pip install -U setuptools \
+RUN pip install --upgrade pip \
+    && pip install -U setuptools \
     && pip --no-cache-dir install \
         numpy \
         pandas \
