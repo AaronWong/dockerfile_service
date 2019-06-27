@@ -41,3 +41,7 @@ RUN pip install --upgrade pip \
         tqdm \
         matplotlib \
         imgaug
+
+RUN apt-get -y update && \
+    apt-get install -y --no-install-recommends \
+    wget
