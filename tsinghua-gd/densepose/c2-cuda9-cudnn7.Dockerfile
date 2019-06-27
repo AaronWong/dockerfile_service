@@ -28,3 +28,15 @@ RUN make
 
 # [Optional] Build custom ops
 RUN make ops
+
+# 安装基础库
+RUN pip install -U setuptools \
+    && pip --no-cache-dir install \
+        numpy \
+        pandas \
+        scipy \
+        scikit-learn \
+        jupyterlab \
+        tqdm \
+        matplotlib \
+        imgaug
