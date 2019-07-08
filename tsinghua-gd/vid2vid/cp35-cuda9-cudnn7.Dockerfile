@@ -26,3 +26,20 @@ WORKDIR /vid2vid
 #WARNING: we had an instance where these scripts needed to be re-run after the docker instance was launched
 RUN python scripts/download_flownet2.py
 RUN python scripts/download_models_flownet2.py
+
+# 安装基础库
+RUN pip install --upgrade pip \
+    && pip install -U setuptools \
+    && pip --no-cache-dir install \
+        numpy \
+        pandas \
+        scipy \
+        scikit-learn \
+        jupyterlab \
+        tqdm \
+        matplotlib \
+        imgaug
+
+RUN apt-get -y update && \
+    apt-get install -y --no-install-recommends \
+    wget
