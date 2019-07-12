@@ -70,7 +70,7 @@ RUN jupyter labextension install @jupyterlab/git
 RUN pip3 install --upgrade jupyterlab-git
 RUN jupyter serverextension enable --py jupyterlab_git
 # RUN jupyter labextension install jupyterlab_voyager
-RUN pip3 install -y --no-install-recommends jupytext --upgrade
+# RUN pip3 install -y --no-install-recommends jupytext --upgrade
 
 # 安装服务常用包
 RUN pip3 --no-cache-dir install \
