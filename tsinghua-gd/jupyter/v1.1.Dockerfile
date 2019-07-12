@@ -14,6 +14,7 @@ RUN apt-get -y update && \
     lsb-release \
     ca-certificates \
     openssh-server
+    
 RUN add-apt-repository "deb http://security.ubuntu.com/ubuntu xenial-security main"
 RUN apt-get -y update && \
     DEBIAN_FRONTEND=noninteractive \
@@ -57,10 +58,19 @@ RUN pip3 install -U setuptools \
         pandas \
         scipy \
         scikit-learn \
-        jupyterlab \
+        jupyterlab==1.0.2 \
         tqdm \
         matplotlib \
         imgaug
+        
+# 安装jupyterlab插件 
+# jupyterlab-git, jupytext, jupyterlab_voyager
+RUN apt-get install -y --no-install-recommends nodejs npm
+RUN jupyter labextension install @jupyterlab/git
+RUN pip3 install --upgrade jupyterlab-git
+RUN jupyter serverextension enable --py jupyterlab_git
+RUN jupyter labextension install jupyterlab_voyager
+RUN pip3 install -y --no-install-recommends jupytext --upgrade
 
 # 安装服务常用包
 RUN pip3 --no-cache-dir install \
