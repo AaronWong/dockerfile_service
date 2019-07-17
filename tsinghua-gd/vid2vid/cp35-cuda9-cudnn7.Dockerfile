@@ -7,8 +7,8 @@ RUN ln -s /usr/bin/python3 /usr/bin/python
 RUN pip3 install --upgrade pip
 
 #Torch and dependencies:
-RUN pip install http://download.pytorch.org/whl/cu90/torch-0.4.1-cp35-cp35m-linux_x86_64.whl 
-RUN pip install torchvision==0.2.2 cffi tensorboardX
+RUN pip install http://download.pytorch.org/whl/cu90/torch-1.0.1-cp35-cp35m-linux_x86_64.whl 
+RUN pip install torchvision cffi tensorboardX
 RUN pip install tqdm scipy scikit-image colorama==0.3.7 
 RUN pip install setproctitle pytz ipython
 
@@ -28,8 +28,7 @@ RUN python scripts/download_flownet2.py
 RUN python scripts/download_models_flownet2.py
 
 # 安装基础库
-RUN pip install --upgrade pip \
-    && pip install -U setuptools \
+RUN pip install -U setuptools \
     && pip --no-cache-dir install \
         numpy \
         pandas \
