@@ -7,10 +7,10 @@ RUN ln -s /usr/bin/python3 /usr/bin/python
 RUN pip3 install --upgrade pip
 
 #Torch and dependencies:
-RUN pip install torchvision cffi tensorboardX
+RUN pip install http://download.pytorch.org/whl/cu90/torch-0.4.1-cp35-cp35m-linux_x86_64.whl 
+RUN pip install torchvision==0.2.2 cffi tensorboardX
 RUN pip install tqdm scipy scikit-image colorama==0.3.7 
 RUN pip install setproctitle pytz ipython
-RUN pip install http://download.pytorch.org/whl/cu90/torch-0.4.1-cp35-cp35m-linux_x86_64.whl 
 
 #vid2vid dependencies
 RUN apt-get install libglib2.0-0 libsm6 libxrender1 -y
