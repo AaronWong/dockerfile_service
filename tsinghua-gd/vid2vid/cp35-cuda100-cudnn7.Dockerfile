@@ -1,15 +1,16 @@
 FROM nvidia/cuda:10.0-cudnn7-devel-ubuntu16.04
 
 RUN apt-get update && apt-get install -y rsync htop git openssh-server
+RUN pip3 install --upgrade pip
+RUN pip install -U setuptools
 
 RUN apt-get install python3-pip -y
 RUN ln -s /usr/bin/python3 /usr/bin/python
-RUN pip3 install --upgrade pip
 
 #Torch and dependencies:
 RUN pip install https://download.pytorch.org/whl/cu100/torch-1.1.0-cp35-cp35m-linux_x86_64.whl
 RUN pip install https://download.pytorch.org/whl/cu100/torchvision-0.3.0-cp35-cp35m-linux_x86_64.whl
-RUN pip install tensorflow-gpu==1.12.3 cffi tensorboardX
+RUN pip install cffi tensorboardX
 RUN pip install tqdm scipy scikit-image colorama==0.3.7
 RUN pip install setproctitle pytz ipython
 
@@ -30,16 +31,16 @@ RUN python scripts/download_models_flownet2.py
 WORKDIR /
 
 # 安装基础库
-RUN pip install -U setuptools \
-    && pip --no-cache-dir install \
-        numpy \
-        pandas \
-        scipy \
-        scikit-learn \
-        jupyterlab \
-        tqdm \
-        matplotlib \
-        imgaug
+RUN pip --no-cache-dir install \
+    numpy \
+    pandas \
+    scipy \
+    scikit-learn \
+    jupyterlab \
+    tqdm \
+    matplotlib \
+    imgaug \
+    tensorflow-gpu==1.13.2
 
 RUN apt-get -y update && \
     apt-get install -y --no-install-recommends \
