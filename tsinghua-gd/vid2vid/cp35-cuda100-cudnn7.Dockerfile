@@ -39,7 +39,7 @@ RUN pip --no-cache-dir install \
     tqdm \
     matplotlib \
     imgaug \
-    tensorflow-gpu==1.13.2
+    tensorflow-gpu==1.12.3
 
 RUN apt-get -y update && \
     apt-get install -y --no-install-recommends \
