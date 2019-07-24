@@ -37,9 +37,9 @@ RUN pip install --upgrade pip \
         pandas \
         scipy \
         scikit-learn \
-        jupyterlab \
+        flask \
+        flask_jsonrpc \
         tqdm \
-        matplotlib \
         imgaug
 
 RUN apt-get -y update && \
