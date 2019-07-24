@@ -29,6 +29,11 @@ RUN make
 # [Optional] Build custom ops
 RUN make ops
 
+# install wget
+RUN apt-get -y update && \
+    apt-get install -y --no-install-recommends \
+    wget
+    
 # get_densepose_uv
 WORKDIR /densepose/DensePoseData
 RUN bash get_densepose_uv.sh
@@ -49,7 +54,3 @@ RUN pip install --upgrade pip \
         imgaug \
         jupyterlab \
         matplotlib
-
-RUN apt-get -y update && \
-    apt-get install -y --no-install-recommends \
-    wget
