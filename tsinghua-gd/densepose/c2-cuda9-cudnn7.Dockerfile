@@ -42,9 +42,8 @@ WORKDIR /densepose
 
 # download model
 RUN mkdir detectron-download-cache
-RUN wget https://dl.fbaipublicfiles.com/densepose/DensePose_ResNet101_FPN_32x8d_s1x-e2e.pkl \
-    detectron-download-cache/DensePose_ResNet101_FPN_32x8d_s1x-e2e.pkl
-
+RUN wget -P ./detectron-download-cache/ \
+    https://dl.fbaipublicfiles.com/densepose/DensePose_ResNet101_FPN_32x8d_s1x-e2e.pkl
 
 # 安装基础库
 RUN pip install --upgrade pip \
