@@ -29,6 +29,12 @@ RUN make
 # [Optional] Build custom ops
 RUN make ops
 
+# get_densepose_uv
+WORKDIR /densepose/DensePoseData
+RUN bash get_densepose_uv.sh
+# Go to Densepose root
+WORKDIR /densepose
+
 # 安装基础库
 RUN pip install --upgrade pip \
     && pip install -U setuptools \
