@@ -40,7 +40,9 @@ RUN pip install --upgrade pip \
         flask \
         flask_jsonrpc \
         tqdm \
-        imgaug
+        imgaug \
+        jupyterlab \
+        matplotlib
 
 RUN apt-get -y update && \
     apt-get install -y --no-install-recommends \
