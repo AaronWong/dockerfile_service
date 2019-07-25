@@ -9,7 +9,7 @@ RUN pip install -U setuptools
 #Torch and dependencies:
 RUN pip install https://download.pytorch.org/whl/cu100/torch-1.1.0-cp35-cp35m-linux_x86_64.whl
 RUN pip install https://download.pytorch.org/whl/cu100/torchvision-0.3.0-cp35-cp35m-linux_x86_64.whl
-RUN pip install cffi tensorboardX
+RUN pip install tensorflow cffi tensorboardX
 RUN pip install tqdm scipy scikit-image colorama==0.3.7
 RUN pip install setproctitle pytz ipython
 
@@ -38,8 +38,7 @@ RUN pip --no-cache-dir install \
     jupyterlab \
     tqdm \
     matplotlib \
-    imgaug \
-    tensorflow-gpu==1.12.3
+    imgaug
 
 RUN apt-get -y update && \
     apt-get install -y --no-install-recommends \
