@@ -46,7 +46,9 @@ RUN apt-get -y update && \
         libboost-all-dev \
         libcaffe-cuda-dev \
         libhdf5-dev \
-        libatlas-base-dev
+        libatlas-base-dev \
+        ffmpeg \
+        vim
      
 # pip 升级
 # RUN python3 -m pip install --upgrade pip
