@@ -52,24 +52,23 @@ RUN apt-get -y update && \
      
 # pip 升级
 # RUN python3 -m pip install --upgrade pip
-
+        
 # 安装基础库
 RUN pip3 install -U setuptools \
     && pip3 --no-cache-dir install \
-        scikit-learn \
+        numpy==1.16.4 \
+        pandas==0.24.2 \
+        scipy==1.2.2 \
+        scikit-learn==0.20.3 \
         jupyterlab==1.0.2 \
+        tqdm==4.32.2 \
+        matplotlib==2.2.4 \
         imgaug \
         Keras==2.2.4 \
         librosa==0.7.0 \
-        matplotlib==2.2.4 \
-        numpy==1.16.4 \
-        pandas==0.24.2 \
         Pillow==6.1.0 \
         resampy==0.2.1 \
-        scikit-learn==0.20.3 \
-        scipy==1.2.2 \
-        tensorflow-gpu==1.9.0 \
-        tqdm==4.32.2
+        tensorflow-gpu==1.9.0
 
 # 安装服务常用包
 RUN pip3 --no-cache-dir install \
