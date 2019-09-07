@@ -26,7 +26,7 @@ RUN apt-get -y update && \
         wget \
         unzip \
         ffmpeg \
-        vim
+        vim \
         build-essential \
         pkg-config \
         libatlas-base-dev \
@@ -39,7 +39,7 @@ RUN apt-get -y update && \
         libpng-dev \
         libtiff-dev \
         libjasper-dev \
-        libv4l-dev \
+        libv4l-dev
         
      
 # pip 升级
