@@ -18,7 +18,7 @@ LABEL maintainer Aaron "aaronwlj@foxmail.com"
 # RUN add-apt-repository "deb http://security.ubuntu.com/ubuntu xenial-security main"    
 RUN apt-get -y update && \
     apt-get install -y --no-install-recommends \
-        python2-dev \
+        python-dev \
         python-pip \
         git \
         g++ \
