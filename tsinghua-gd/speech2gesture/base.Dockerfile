@@ -6,16 +6,16 @@ FROM nvidia/cuda:9.0-cudnn7-devel-ubuntu16.04
 LABEL maintainer Aaron "aaronwlj@foxmail.com"
 
 # Install dependencies
-RUN apt-get -y update && \
-    apt-get install -y --no-install-recommends \
-    software-properties-common \
-    dirmngr \
-    apt-transport-https \
-    lsb-release \
-    ca-certificates \
-    openssh-server
+# RUN apt-get -y update && \
+#     apt-get install -y --no-install-recommends \
+#     software-properties-common \
+#     dirmngr \
+#     apt-transport-https \
+#     lsb-release \
+#     ca-certificates \
+#     openssh-server
 
-RUN add-apt-repository "deb http://security.ubuntu.com/ubuntu xenial-security main"    
+# RUN add-apt-repository "deb http://security.ubuntu.com/ubuntu xenial-security main"    
 RUN apt-get -y update && \
     apt-get install -y --no-install-recommends \
         python3-dev \
@@ -27,19 +27,19 @@ RUN apt-get -y update && \
         unzip \
         ffmpeg \
         vim
-#         build-essential \
-#         pkg-config \
-#         libatlas-base-dev \
-#         gfortran \
-#         libgtk2.0-dev \
-#         libavcodec-dev \
-#         libavformat-dev \
-#         libswscale-dev \
-#         libjpeg-dev \
-#         libpng-dev \
-#         libtiff-dev \
-#         libjasper-dev \
-#         libv4l-dev \
+        build-essential \
+        pkg-config \
+        libatlas-base-dev \
+        gfortran \
+        libgtk2.0-dev \
+        libavcodec-dev \
+        libavformat-dev \
+        libswscale-dev \
+        libjpeg-dev \
+        libpng-dev \
+        libtiff-dev \
+        libjasper-dev \
+        libv4l-dev \
         
      
 # pip 升级
@@ -71,40 +71,40 @@ RUN pip3 install -U setuptools \
 #     requests_toolbelt 
 
 # 安装openpose deps
-RUN apt-get update && \
-    DEBIAN_FRONTEND=noninteractive \
-    apt-get install -y --no-install-recommends \
-        libprotobuf-dev \
-        protobuf-compiler \
-        libopencv-dev \
-        libgoogle-glog-dev \
-        libboost-all-dev \
-        libcaffe-cuda-dev \
-        libhdf5-dev \
-        libatlas-base-dev
+# RUN apt-get update && \
+#     DEBIAN_FRONTEND=noninteractive \
+#     apt-get install -y --no-install-recommends \
+#         libprotobuf-dev \
+#         protobuf-compiler \
+#         libopencv-dev \
+#         libgoogle-glog-dev \
+#         libboost-all-dev \
+#         libcaffe-cuda-dev \
+#         libhdf5-dev \
+#         libatlas-base-dev
 
 # Install OpenCV
 RUN pip3 --no-cache-dir install opencv-python==3.4.5.20
 
 # 安装openpose
 # ENV
-ENV PYTHON_EXECUTABLE="/usr/bin/python3.6"
-ENV PYTHON_LIBRARY="/usr/lib/x86_64-linux-gnu/libpython3.6m.so"
+# ENV PYTHON_EXECUTABLE="/usr/bin/python3.6"
+# ENV PYTHON_LIBRARY="/usr/lib/x86_64-linux-gnu/libpython3.6m.so"
 
-# replace cmake as old version has CUDA variable bugs
-RUN wget https://github.com/Kitware/CMake/releases/download/v3.14.2/cmake-3.14.2-Linux-x86_64.tar.gz && \
-tar xzf cmake-3.14.2-Linux-x86_64.tar.gz -C /opt && \
-rm cmake-3.14.2-Linux-x86_64.tar.gz
-ENV PATH="/opt/cmake-3.14.2-Linux-x86_64/bin:${PATH}"
+# # replace cmake as old version has CUDA variable bugs
+# RUN wget https://github.com/Kitware/CMake/releases/download/v3.14.2/cmake-3.14.2-Linux-x86_64.tar.gz && \
+# tar xzf cmake-3.14.2-Linux-x86_64.tar.gz -C /opt && \
+# rm cmake-3.14.2-Linux-x86_64.tar.gz
+# ENV PATH="/opt/cmake-3.14.2-Linux-x86_64/bin:${PATH}"
 
-# get openpose
-WORKDIR /opt/openpose
-RUN git clone https://github.com/CMU-Perceptual-Computing-Lab/openpose.git .
+# # get openpose
+# WORKDIR /opt/openpose
+# RUN git clone https://github.com/CMU-Perceptual-Computing-Lab/openpose.git .
 
-# build it
-WORKDIR /opt/openpose/build
-RUN cmake -DBUILD_PYTHON=ON .. && make -j8 && make install
-WORKDIR /root
+# # build it
+# WORKDIR /opt/openpose/build
+# RUN cmake -DBUILD_PYTHON=ON .. && make -j8 && make install
+# WORKDIR /root
 
 # 安装 DLIB
 # RUN cd /root/ && \
