@@ -6,14 +6,14 @@ FROM nvidia/cuda:9.0-cudnn7-devel-ubuntu16.04
 LABEL maintainer Aaron "aaronwlj@foxmail.com"
 
 # Install dependencies
-# RUN apt-get -y update && \
-#     apt-get install -y --no-install-recommends \
-#     software-properties-common \
-#     dirmngr \
-#     apt-transport-https \
-#     lsb-release \
-#     ca-certificates \
-#     openssh-server
+RUN apt-get -y update && \
+    apt-get install -y --no-install-recommends \
+    software-properties-common \
+    dirmngr \
+    apt-transport-https \
+    lsb-release \
+    ca-certificates \
+    openssh-server
 
 RUN add-apt-repository "deb http://security.ubuntu.com/ubuntu xenial-security main"    
 RUN apt-get -y update && \
