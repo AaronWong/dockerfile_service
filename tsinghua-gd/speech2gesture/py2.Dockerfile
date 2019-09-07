@@ -43,7 +43,7 @@ RUN apt-get -y update && \
         
      
 # pip 升级
-# RUN python -m pip install --upgrade pip
+RUN python -m pip install --upgrade pip
         
 # 安装基础库
 RUN pip install -U setuptools \
@@ -52,7 +52,7 @@ RUN pip install -U setuptools \
         pandas==0.24.2 \
         scipy==1.2.2 \
         scikit-learn==0.20.3 \
-        jupyterlab==1.0.2 \
+        jupyterlab \
         tqdm==4.32.2 \
         matplotlib==2.2.4 \
         imgaug \
