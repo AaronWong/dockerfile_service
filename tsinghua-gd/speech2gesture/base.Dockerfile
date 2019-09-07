@@ -37,16 +37,8 @@ RUN apt-get -y update && \
 #         libjpeg-dev \
 #         libpng-dev \
 #         libtiff-dev \
-#         libprotobuf-dev \
 #         libjasper-dev \
 #         libv4l-dev \
-#         protobuf-compiler \
-#         libopencv-dev \
-#         libgoogle-glog-dev \
-#         libboost-all-dev \
-#         libcaffe-cuda-dev \
-#         libhdf5-dev \
-#         libatlas-base-dev \
         
      
 # pip 升级
@@ -76,6 +68,19 @@ RUN pip3 install -U setuptools \
 #     flask_jsonrpc \
 #     fire \
 #     requests_toolbelt 
+
+# 安装openpose deps
+RUN apt-get update && \
+    DEBIAN_FRONTEND=noninteractive \
+    apt-get install -y --no-install-recommends \
+        libprotobuf-dev \
+        protobuf-compiler \
+        libopencv-dev \
+        libgoogle-glog-dev \
+        libboost-all-dev \
+        libcaffe-cuda-dev \
+        libhdf5-dev \
+        libatlas-base-dev
 
 # Install OpenCV
 RUN pip3 --no-cache-dir install opencv-python==3.4.5.20
