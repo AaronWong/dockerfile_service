@@ -14,7 +14,8 @@ LABEL maintainer Aaron "aaronwlj@foxmail.com"
 #     lsb-release \
 #     ca-certificates \
 #     openssh-server
-    
+
+RUN add-apt-repository "deb http://security.ubuntu.com/ubuntu xenial-security main"    
 RUN apt-get -y update && \
     apt-get install -y --no-install-recommends \
         python3-dev \
