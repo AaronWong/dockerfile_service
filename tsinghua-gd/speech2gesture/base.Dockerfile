@@ -1,7 +1,7 @@
 # create registry.cn-shenzhen.aliyuncs.com/tsinghua_gd/speech2gesture:base
 
 # Pull base image.
-FROM nvidia/cuda:10.0-cudnn7-devel
+FROM nvidia/cuda:9.0-cudnn7-devel-ubuntu16.04
 
 LABEL maintainer Aaron "aaronwlj@foxmail.com"
 
@@ -15,7 +15,6 @@ RUN apt-get -y update && \
     ca-certificates \
     openssh-server
     
-RUN add-apt-repository "deb http://security.ubuntu.com/ubuntu xenial-security main"
 RUN apt-get -y update && \
     DEBIAN_FRONTEND=noninteractive \
     apt-get install -y --no-install-recommends \
