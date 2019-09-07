@@ -1,4 +1,4 @@
-# create registry.cn-shenzhen.aliyuncs.com/tsinghua_gd/speech2gesture:base
+# create registry.cn-shenzhen.aliyuncs.com/tsinghua_gd/speech2gesture:py2
 
 # Pull base image.
 FROM nvidia/cuda:9.0-cudnn7-devel-ubuntu16.04
