@@ -46,15 +46,15 @@ RUN apt-get -y update && \
 # RUN python3 -m pip install --upgrade pip
         
 # 安装服务常用包
-RUN pip3 --no-cache-dir install \
-    flask \
-    flask-restful \
-    flask_jsonrpc \
-    fire \
-    requests_toolbelt 
+RUN pip3 install -U setuptools \
+    && pip3 --no-cache-dir install \
+            flask \
+            flask-restful \
+            flask_jsonrpc \
+            fire \
+            requests_toolbelt 
 
 # Audio2BodyDynamics requirements
-RUN pip3 install -U setuptools
 RUN pip3 --no-cache-dir install \
   certifi==2018.8.24 \
   cycler==0.10.0 \
