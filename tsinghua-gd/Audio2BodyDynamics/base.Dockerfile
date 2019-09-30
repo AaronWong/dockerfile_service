@@ -37,19 +37,11 @@ RUN apt-get -y update && \
         libjpeg-dev \
         libpng-dev \
         libtiff-dev \
-        libprotobuf-dev \
         libjasper-dev \
         libv4l-dev \
-        protobuf-compiler \
-        libopencv-dev \
-        libgoogle-glog-dev \
-        libboost-all-dev \
-        libcaffe-cuda-dev \
-        libhdf5-dev \
-        libatlas-base-dev \
         ffmpeg \
         vim
-     
+        
 # pip 升级
 # RUN python3 -m pip install --upgrade pip
         
