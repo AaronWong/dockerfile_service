@@ -1,4 +1,4 @@
-# create registry.cn-shenzhen.aliyuncs.com/tsinghua_gd/Audio2BodyDynamics:base
+# create registry.cn-shenzhen.aliyuncs.com/tsinghua_gd/a2b:base
 
 # Pull base image.
 FROM nvidia/cuda:9.2-cudnn7-devel
