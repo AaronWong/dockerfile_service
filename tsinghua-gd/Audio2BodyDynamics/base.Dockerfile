@@ -70,11 +70,12 @@ RUN pip3 --no-cache-dir install \
   sklearn==0.0 \
   torch==0.4.1 \
   torchvision==0.2.1 \
-  opencv-python==3.4.3.18
+  opencv-python==3.4.3.18 \
+  librosa==0.7.1
 
 # 安装基础库
 RUN pip3 --no-cache-dir install \
-  pandas \
+  pandas==0.24.2 \
   jupyterlab \
   tqdm \
   imgaug
