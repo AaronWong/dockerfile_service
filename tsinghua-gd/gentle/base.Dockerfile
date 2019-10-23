@@ -16,7 +16,7 @@ RUN DEBIAN_FRONTEND=noninteractive && \
 		wget unzip && \
 	apt-get clean
 
-RUN cd / && git https://github.com/lowerquality/gentle.git && cd gentle
+RUN cd / && git clone https://github.com/lowerquality/gentle.git && cd gentle
 RUN export MAKEFLAGS=' -j8' &&  cd /gentle/ext && \
 	./install_kaldi.sh && \
 	make depend && make && rm -rf kaldi *.o
