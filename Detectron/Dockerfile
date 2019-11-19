@@ -28,8 +28,8 @@ RUN make
 RUN make ops
 
 # personal
-RUN pip3 install -U setuptools \
-    && pip3 --no-cache-dir install \
+RUN pip install -U setuptools \
+    && pip --no-cache-dir install \
         numpy \
         pandas \
         scipy \
@@ -40,4 +40,4 @@ RUN pip3 install -U setuptools \
         imgaug
         
 # Install OpenCV
-RUN pip3 --no-cache-dir install opencv-python==3.4.5.20
+RUN pip --no-cache-dir install opencv-python==3.4.5.20
