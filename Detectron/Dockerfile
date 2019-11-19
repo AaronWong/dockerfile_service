@@ -1,4 +1,3 @@
-
 # Use Caffe2 image as parent image
 FROM caffe2/caffe2:snapshot-py2-cuda9.0-cudnn7-ubuntu16.04
 
@@ -27,3 +26,18 @@ RUN make
 
 # [Optional] Build custom ops
 RUN make ops
+
+# personal
+RUN pip3 install -U setuptools \
+    && pip3 --no-cache-dir install \
+        numpy \
+        pandas \
+        scipy \
+        scikit-learn \
+        jupyterlab==1.0.2 \
+        tqdm \
+        matplotlib \
+        imgaug
+        
+# Install OpenCV
+RUN pip3 --no-cache-dir install opencv-python==3.4.5.20
