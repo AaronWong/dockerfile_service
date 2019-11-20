@@ -1,4 +1,4 @@
-# Use Caffe2 image as parent image
+# Use detectron image as parent image
 FROM housebw/detectron:latest
 
 # personal package
