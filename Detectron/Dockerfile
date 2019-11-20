@@ -42,7 +42,6 @@ RUN apt-get -y update && \
         libopencv-dev \
         libgoogle-glog-dev \
         libboost-all-dev \
-        libcaffe-cuda-dev \
         libhdf5-dev \
         libatlas-base-dev \
         ffmpeg \
