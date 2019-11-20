@@ -1,5 +1,16 @@
 # Use detectron image as parent image
 FROM housebw/detectron:latest
+LABEL maintainer Aaron "aaronwlj@foxmail.com"
+
+# Install dependencies
+RUN apt-get -y update && \
+    apt-get install -y --no-install-recommends \
+    software-properties-common \
+    dirmngr \
+    apt-transport-https \
+    lsb-release \
+    ca-certificates \
+    openssh-server
 
 RUN pip install --upgrade pip
 
