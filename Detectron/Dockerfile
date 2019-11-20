@@ -1,6 +1,8 @@
 # Use detectron image as parent image
 FROM housebw/detectron:latest
 
+RUN pip install --upgrade pip
+
 # personal package
 RUN pip install -U setuptools \
     && pip --no-cache-dir install \
@@ -8,7 +10,7 @@ RUN pip install -U setuptools \
         pandas \
         scipy \
         scikit-learn \
-        jupyterlab==1.0.2 \
+        jupyterlab \
         tqdm \
         matplotlib \
         imgaug
