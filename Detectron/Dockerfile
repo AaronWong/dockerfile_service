@@ -2,6 +2,8 @@
 FROM housebw/detectron:latest
 
 RUN pip install --upgrade pip
+RUN apt update
+RUN apt install ffmpeg
 
 # personal package
 RUN pip install -U setuptools \
