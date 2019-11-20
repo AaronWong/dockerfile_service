@@ -46,7 +46,10 @@ RUN apt-get -y update && \
         libatlas-base-dev \
         ffmpeg \
         vim
-        
+
+# pip 升级
+RUN pip3 install --upgrade pip
+
 # personal package
 RUN pip3 install -U setuptools \
     && pip3 --no-cache-dir install \
