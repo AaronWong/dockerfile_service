@@ -42,4 +42,5 @@ RUN pip --no-cache-dir install \
 
 RUN apt-get -y update && \
     apt-get install -y --no-install-recommends \
-    wget
+    wget \
+    vim
