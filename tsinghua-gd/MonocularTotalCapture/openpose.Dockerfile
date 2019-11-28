@@ -46,7 +46,7 @@ rm cmake-3.14.2-Linux-x86_64.tar.gz
 ENV PATH="/opt/cmake-3.14.2-Linux-x86_64/bin:${PATH}"
 
 RUN echo "Downloading and building OpenPose..." && \
-	git clone https://github.com/CMU-Perceptual-Computing-Lab/openpose.git && \
+	git clone https://github.com/AaronWong/openpose.git && \
 	mkdir -p /openpose/build && \
 	cd /openpose/build && \
 	cmake .. && \
