@@ -6,7 +6,7 @@ FROM nvidia/cuda:9.0-cudnn7-devel-ubuntu16.04
 LABEL maintainer Aaron "aaronwlj@foxmail.com"
 
 # Install dependencies
-RUN apt-get update && \
+RUN apt-get -y update && \
     apt-get install -y --no-install-recommends \
     software-properties-common \
     dirmngr \
@@ -28,7 +28,7 @@ RUN apt-get update && \
         vim
 
 # pip 升级
-# RUN python3 -m pip install --upgrade pip
+RUN python3 -m pip install --upgrade pip
     
 # 安装基础库
 RUN pip3 install -U setuptools \
@@ -48,25 +48,6 @@ RUN pip3 --no-cache-dir install tensorflow-gpu==1.5.0
 # Install OpenCV
 RUN pip3 --no-cache-dir install opencv-python==3.4.2.17
 
-# CMake
-RUN apt-get install -y cmake
-# google-glog + gflags
-RUN apt-get install -y libgoogle-glog-dev
-# BLAS & LAPACK
-RUN apt-get install -y libatlas-base-dev
-# Eigen3
-RUN apt-get install -y libeigen3-dev
-# SuiteSparse and CXSparse (optional)
-# - If you want to build Ceres as a *static* library (the default)
-#   you can use the SuiteSparse package in the main Ubuntu package
-#   repository:
-RUN apt-get install -y libsuitesparse-dev
-# - However, if you want to build Ceres as a *shared* library, you must
-#   add the following PPA:
-RUN add-apt-repository ppa:bzindovic/suitesparse-bugfix-1319687
-RUN apt-get update
-RUN apt-get install -y libsuitesparse-dev
-
 # 安装openpose
 # ENV
 ENV PYTHON_EXECUTABLE="/usr/bin/python3.5"
@@ -85,7 +66,7 @@ RUN git clone https://github.com/CMU-Perceptual-Computing-Lab/openpose.git .
 # build it
 WORKDIR /opt/openpose/build
 RUN cmake -DBUILD_PYTHON=ON .. && make -j8 && make install
-WORKDIR /rootcat
+WORKDIR /root
 
 # 删除 apt lists
 RUN rm -rf /var/lib/apt/lists/*
@@ -96,3 +77,33 @@ ENV TERM xterm
 
 # 解决时区问题
 ENV TZ "Asia/Shanghai"
+
+
+# # CMake
+# RUN apt-get install -y cmake
+# # google-glog + gflags
+# RUN apt-get install -y libgoogle-glog-dev
+# # BLAS & LAPACK
+# RUN apt-get install -y libatlas-base-dev
+# # Eigen3
+# RUN apt-get install -y libeigen3-dev
+# # SuiteSparse and CXSparse (optional)
+# # - If you want to build Ceres as a *static* library (the default)
+# #   you can use the SuiteSparse package in the main Ubuntu package
+# #   repository:
+# RUN apt-get install -y libsuitesparse-dev
+# # - However, if you want to build Ceres as a *shared* library, you must
+# #   add the following PPA:
+# RUN add-apt-repository ppa:bzindovic/suitesparse-bugfix-1319687
+# RUN apt-get update
+# RUN apt-get install -y libsuitesparse-dev
+# RUN tar zxf ceres-solver-1.14.0.tar.gz
+# RUN mkdir ceres-bin
+# RUN cd ceres-bin
+# RUN cmake ../ceres-solver-1.14.0
+# RUN make -j3 && make test && make install
+# RUN make test
+# # Optionally install Ceres, it can also be exported using CMake which
+# # allows Ceres to be used without requiring installation, see the documentation
+# # for the EXPORT_BUILD_DIR option for more information.
+# RUN make install
