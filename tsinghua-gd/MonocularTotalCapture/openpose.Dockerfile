@@ -34,6 +34,8 @@ RUN echo "Installing dependencies..." && \
 	protobuf \
 	opencv-python
 
+WORKDIR /
+
 # replace cmake as old version has CUDA variable bugs
 RUN wget https://github.com/Kitware/CMake/releases/download/v3.14.2/cmake-3.14.2-Linux-x86_64.tar.gz && \
 tar xzf cmake-3.14.2-Linux-x86_64.tar.gz -C /opt && \
