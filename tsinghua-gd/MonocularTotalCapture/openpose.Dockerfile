@@ -1,5 +1,5 @@
 # Pull base image.
-FROM nvidia/cuda:10.0-cudnn7-devel-ubuntu16.04
+FROM nvidia/cuda:9.0-cudnn7-devel-ubuntu16.04
 
 LABEL maintainer Aaron "aaronwlj@foxmail.com"
 
