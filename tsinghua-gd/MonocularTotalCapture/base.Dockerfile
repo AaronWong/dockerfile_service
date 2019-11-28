@@ -21,33 +21,39 @@ RUN apt-get -y update && \
     apt-get install -y --no-install-recommends \
         python3-dev \
         python3-pip \
+        locales \
+        build-essential \
+        cmake \
         git \
         g++ \
         make \
         wget \
         unzip \
-        build-essential \
-        pkg-config \
-        libatlas-base-dev \
-        gfortran \
-        libgtk2.0-dev \
-        libavcodec-dev \
-        libavformat-dev \
-        libswscale-dev \
-        libjpeg-dev \
-        libpng-dev \
-        libtiff-dev \
-        libprotobuf-dev \
-        libjasper-dev \
-        libv4l-dev \
-        protobuf-compiler \
-        libopencv-dev \
-        libgoogle-glog-dev \
-        libboost-all-dev \
-        libhdf5-dev \
-        libatlas-base-dev \
         ffmpeg \
         vim
+        
+RUN apt-get update && \
+    apt-get install -yq --no-install-recommends --no-upgrade \
+    apt-utils && \
+    apt-get install -yq --no-install-recommends --no-upgrade \
+    # for OpenPose
+    libatlas-base-dev \
+    libprotobuf-dev \
+    libleveldb-dev \
+    libsnappy-dev \
+    libhdf5-serial-dev \
+    protobuf-compiler \
+    libboost-all-dev \
+    libgflags-dev \
+    libgoogle-glog-dev \
+    liblmdb-dev \
+    opencl-headers \
+    ocl-icd-opencl-dev \
+    libviennacl-dev \
+    libopencv-dev \
+    && ldconfig && \
+    apt-get clean && \
+    rm -rf /var/lib/apt/lists/*
 
 # pip 升级
 RUN python3 -m pip install --upgrade pip
@@ -76,10 +82,10 @@ ENV PYTHON_EXECUTABLE="/usr/bin/python3.5"
 ENV PYTHON_LIBRARY="/usr/lib/x86_64-linux-gnu/libpython3.5m.so"
 
 # replace cmake as old version has CUDA variable bugs
-RUN wget https://github.com/Kitware/CMake/releases/download/v3.14.2/cmake-3.14.2-Linux-x86_64.tar.gz && \
-tar xzf cmake-3.14.2-Linux-x86_64.tar.gz -C /opt && \
-rm cmake-3.14.2-Linux-x86_64.tar.gz
-ENV PATH="/opt/cmake-3.14.2-Linux-x86_64/bin:${PATH}"
+# RUN wget https://github.com/Kitware/CMake/releases/download/v3.14.2/cmake-3.14.2-Linux-x86_64.tar.gz && \
+# tar xzf cmake-3.14.2-Linux-x86_64.tar.gz -C /opt && \
+# rm cmake-3.14.2-Linux-x86_64.tar.gz
+# ENV PATH="/opt/cmake-3.14.2-Linux-x86_64/bin:${PATH}"
 
 # get openpose
 WORKDIR /opt/openpose
