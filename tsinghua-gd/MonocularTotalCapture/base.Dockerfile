@@ -15,7 +15,9 @@ RUN apt-get -y update && \
     ca-certificates \
     openssh-server
     
-RUN apt-get update && \
+RUN add-apt-repository "deb http://security.ubuntu.com/ubuntu xenial-security main"
+RUN apt-get -y update && \
+    DEBIAN_FRONTEND=noninteractive \
     apt-get install -y --no-install-recommends \
         python3-dev \
         python3-pip \
@@ -24,6 +26,27 @@ RUN apt-get update && \
         make \
         wget \
         unzip \
+        build-essential \
+        pkg-config \
+        libatlas-base-dev \
+        gfortran \
+        libgtk2.0-dev \
+        libavcodec-dev \
+        libavformat-dev \
+        libswscale-dev \
+        libjpeg-dev \
+        libpng-dev \
+        libtiff-dev \
+        libprotobuf-dev \
+        libjasper-dev \
+        libv4l-dev \
+        protobuf-compiler \
+        libopencv-dev \
+        libgoogle-glog-dev \
+        libboost-all-dev \
+        libcaffe-cuda-dev \
+        libhdf5-dev \
+        libatlas-base-dev \
         ffmpeg \
         vim
 
