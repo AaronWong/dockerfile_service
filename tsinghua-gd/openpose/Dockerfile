@@ -10,7 +10,7 @@ libgoogle-glog-dev libboost-all-dev libcaffe-cuda-dev libhdf5-dev libatlas-base-
 # python-dev python-pip
 
 # for python api
-RUN pip3 install numpy opencv-python 
+RUN pip3 install numpy opencv-python==3.4.5.20 
 # RUN pip install numpy opencv-python 
 
 #
