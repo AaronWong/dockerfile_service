@@ -33,8 +33,8 @@ RUN echo "Installing dependencies..." && \
 RUN python3 -m pip install \
 	numpy \
 	protobuf \
-	opencv-python
-
+	opencv-python==3.4.5.20
+	
 RUN apt-get install -y --no-install-recommends \
 	build-essential \
 	wget \
