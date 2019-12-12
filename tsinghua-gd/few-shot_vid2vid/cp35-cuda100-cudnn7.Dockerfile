@@ -3,7 +3,7 @@ FROM nvidia/cuda:10.0-cudnn7-devel-ubuntu16.04
 RUN apt-get update && apt-get install -y rsync htop git openssh-server
 RUN apt-get install python3-pip -y
 RUN ln -s /usr/bin/python3 /usr/bin/python
-RUN pip install --upgrade pip
+RUN pip3 install --upgrade pip
 RUN pip install -U setuptools
 
 #Torch and dependencies:
