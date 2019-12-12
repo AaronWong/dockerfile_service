@@ -7,8 +7,8 @@ RUN pip3 install --upgrade pip
 RUN pip install -U setuptools
 
 #Torch and dependencies:
-RUN pip install torch==1.2.0 torchvision==0.4.0 -f https://download.pytorch.org/whl/torch_stable.html
-RUN pip install tensorflow cffi tensorboardX
+RUN pip install torch==1.2.0 torchvision==0.4.0
+RUN pip install tensorflow==1.14.0 cffi tensorboardX
 RUN pip install tqdm scipy==1.2.1 scikit-image colorama==0.3.7
 RUN pip install setproctitle pytz ipython
 
