@@ -14,7 +14,13 @@ RUN apt-get -y update && \
         make \
         wget \
         unzip \
-        vim
+        vim \
+        build-essential \
+        libssl-dev \
+        libffi-dev \
+        libxml2 \
+        libxml2-dev \
+        libxslt1-dev
      
 # pip 升级
 RUN python3 -m pip install --upgrade pip
