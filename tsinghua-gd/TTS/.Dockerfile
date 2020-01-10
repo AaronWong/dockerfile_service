@@ -22,9 +22,9 @@ RUN python3 -m pip install --upgrade pip
 # 安装基础库
 RUN pip3 install -U setuptools
 RUN pip3 --no-cache-dir install \
-      numpy==1.14.5 \
+      numpy \
       pandas \
-      scipy==0.19.0 \
+      scipy \
       scikit-learn \
       tqdm==4.11.2 \
       matplotlib==2.0.2 \
