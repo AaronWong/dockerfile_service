@@ -29,7 +29,9 @@ RUN pip3 --no-cache-dir install \
       tqdm \
       matplotlib \
       librosa \
-      Unidecode \
+      Unidecode
+
+RUN pip3 --no-cache-dir install \
       pyaudio \
       jieba3k \
       pypinyin \
