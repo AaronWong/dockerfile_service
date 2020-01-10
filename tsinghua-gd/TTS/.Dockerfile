@@ -28,7 +28,6 @@ RUN pip3 --no-cache-dir install \
       scikit-learn \
       tqdm==4.11.2 \
       matplotlib==2.0.2 \
-      tensorflow-gpu==1.10.0 \
       librosa==0.7.1 \
       Unidecode==0.4.20 \
       pyaudio==0.2.11 \
@@ -38,6 +37,8 @@ RUN pip3 --no-cache-dir install \
       sounddevice==0.3.14 \
       falcon==1.2.0 \
       inflect==0.2.5
+
+RUN pip3 --no-cache-dir install tensorflow-gpu==1.10.0
 
 # 安装服务常用包
 RUN pip3 --no-cache-dir install \
