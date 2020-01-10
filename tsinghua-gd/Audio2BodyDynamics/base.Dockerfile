@@ -73,6 +73,7 @@ RUN pip3 --no-cache-dir install \
   opencv-python==3.4.3.18 \
   librosa==0.7.1
 
+RUN python3 -m pip install --upgrade pip
 # 安装基础库
 RUN pip3 --no-cache-dir install \
   pandas==0.24.2 \
