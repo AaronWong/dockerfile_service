@@ -21,7 +21,7 @@ RUN apt-get -y update && \
         libxml2 \
         libxml2-dev \
         libxslt1-dev \
-        libsndfile \
+        libsndfile1 \
         libasound-dev \
         portaudio19-dev \
         libportaudio2 \
