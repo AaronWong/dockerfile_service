@@ -20,8 +20,12 @@ RUN apt-get -y update && \
         libffi-dev \
         libxml2 \
         libxml2-dev \
-        libxslt1-dev
-     
+        libxslt1-dev \
+        libasound-dev \
+        portaudio19-dev \
+        libportaudio2 \
+        libportaudiocpp0
+        
 # pip 升级
 RUN python3 -m pip install --upgrade pip
 
