@@ -26,17 +26,17 @@ RUN pip3 --no-cache-dir install \
       pandas \
       scipy \
       scikit-learn \
-      tqdm==4.11.2 \
-      matplotlib==2.0.2 \
-      librosa==0.7.1 \
-      Unidecode==0.4.20 \
-      pyaudio==0.2.11 \
-      jieba3k==0.35.1 \
-      pypinyin==0.36.0 \
-      pydub==0.23.1 \
-      sounddevice==0.3.14 \
-      falcon==1.2.0 \
-      inflect==0.2.5
+      tqdm \
+      matplotlib \
+      librosa \
+      Unidecode \
+      pyaudio \
+      jieba3k \
+      pypinyin \
+      pydub \
+      sounddevice \
+      falcon \
+      inflect
 
 RUN pip3 --no-cache-dir install tensorflow-gpu==1.10.0
 
