@@ -38,6 +38,7 @@ RUN pip3 --no-cache-dir install \
       scikit-learn \
       tqdm \
       matplotlib \
+      jupyterlab \
       librosa \
       Unidecode
 
