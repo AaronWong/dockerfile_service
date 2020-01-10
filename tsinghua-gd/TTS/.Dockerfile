@@ -32,7 +32,6 @@ RUN pip3 --no-cache-dir install \
       Unidecode
 
 RUN pip3 --no-cache-dir install \
-      pyaudio \
       jieba3k \
       pypinyin \
       pydub \
@@ -40,6 +39,7 @@ RUN pip3 --no-cache-dir install \
       falcon \
       inflect
 
+RUN pip3 --no-cache-dir install pyaudio
 RUN pip3 --no-cache-dir install tensorflow-gpu==1.10.0
 
 # 安装服务常用包
