@@ -63,7 +63,9 @@ RUN pip3 install -U setuptools \
         jupyterlab \
         tqdm \
         matplotlib \
-        imgaug
+        imgaug \
+        ipywidgets
+RUN jupyter nbextension enable --py --sys-prefix widgetsnbextension
 
 # 安装服务常用包
 RUN pip3 --no-cache-dir install \
