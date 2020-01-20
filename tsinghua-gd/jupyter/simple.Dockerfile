@@ -64,6 +64,7 @@ RUN pip3 install -U setuptools \
         tqdm \
         matplotlib \
         imgaug \
+        librosa \
         ipywidgets
 RUN jupyter nbextension enable --py --sys-prefix widgetsnbextension
 
