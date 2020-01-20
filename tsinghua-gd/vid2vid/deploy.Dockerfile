@@ -11,7 +11,6 @@ RUN pip3 --no-cache-dir install \
 # ffmpeg
 RUN apt-get -y update && \
     apt-get install -y --no-install-recommends \
-    aclang \
     pkg-config \
     clang \
     libfdk-aac-dev \
