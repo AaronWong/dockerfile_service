@@ -12,7 +12,7 @@ EXPOSE 80
 RUN mkdir -p /opt/data && mkdir /www
 
 # Build dependencies.
-RUN	apk update && apk add	\
+RUN apk update && apk add	\
   binutils \
   binutils-libs \
   build-base \
