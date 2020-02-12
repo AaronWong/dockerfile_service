@@ -87,13 +87,13 @@ RUN cd /tmp/ffmpeg-${FFMPEG_VERSION} && \
   --disable-debug && \
   make && make install && make distclean
 
-# Cleanup.
-RUN rm -rf /var/cache/* /tmp/*
-
 # Add NGINX config and static files.
-RUN wget https://github.com/AaronWong/dockerfile_service/raw/master/tsinghua-gd/nginx-http-flv/nginx.conf /tmp/
+RUN wget -P /tmp https://github.com/AaronWong/dockerfile_service/raw/master/tsinghua-gd/nginx-http-flv/nginx.conf /tmp/
 ADD /tmp/nginx.conf /opt/nginx/nginx.conf
 ADD static /www/static
+
+# Cleanup.
+RUN rm -rf /var/cache/* /tmp/*
 
 RUN mkdir -p /var/log/nginx
 RUN  ln -sf /dev/stdout /var/log/nginx/access.log \
