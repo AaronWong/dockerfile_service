@@ -88,7 +88,7 @@ RUN cd /tmp/ffmpeg-${FFMPEG_VERSION} && \
   make && make install && make distclean
 
 # Add NGINX config and static files.
-ADD /tmp/nginx-http-flv-module/test/nginx.conf /opt/nginx/nginx.conf
+RUN mv /tmp/nginx-http-flv-module/test/nginx.conf /opt/nginx/nginx.conf
 ADD static /www/static
 
 # Cleanup.
