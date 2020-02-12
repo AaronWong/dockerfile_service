@@ -38,7 +38,8 @@ RUN cd /tmp && \
   rm nginx-${NGINX_VERSION}.tar.gz
 
 # Get nginx-http-flv-module
-RUN git clone https://github.com/winshining/nginx-http-flv-module.git
+RUN mkdir /tmp/nginx-http-flv-module
+RUN git clone https://github.com/winshining/nginx-http-flv-module.git /tmp/nginx-http-flv-module
 
 # Compile nginx with nginx-http-flv module.
 RUN cd /tmp/nginx-${NGINX_VERSION} && \
