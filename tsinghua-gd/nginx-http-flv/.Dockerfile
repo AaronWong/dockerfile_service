@@ -89,7 +89,7 @@ RUN cd /tmp/ffmpeg-${FFMPEG_VERSION} && \
 
 # Add NGINX config and static files.
 RUN mv /tmp/nginx-http-flv-module/test/nginx.conf /opt/nginx/nginx.conf
-ADD static /www/static
+# ADD static /www/static
 
 # Cleanup.
 RUN rm -rf /var/cache/* /tmp/*
