@@ -91,8 +91,8 @@ RUN cd /tmp/ffmpeg-${FFMPEG_VERSION} && \
 RUN rm -rf /var/cache/* /tmp/*
 
 # Add NGINX config and static files.
-ADD nginx.conf /opt/nginx/nginx.conf
-ADD static /www/static
+# ADD nginx.conf /opt/nginx/nginx.conf
+# ADD static /www/static
 
 RUN mkdir -p /var/log/nginx
 RUN  ln -sf /dev/stdout /var/log/nginx/access.log \
