@@ -88,7 +88,7 @@ RUN cd /tmp/ffmpeg-${FFMPEG_VERSION} && \
   make && make install && make distclean
 
 # Add NGINX config and static files.
-RUN wget -P /tmp https://github.com/AaronWong/dockerfile_service/raw/master/tsinghua-gd/nginx-http-flv/nginx.conf /tmp/
+RUN wget -P /tmp https://github.com/AaronWong/dockerfile_service/raw/master/tsinghua-gd/nginx-http-flv/nginx.conf
 ADD /tmp/nginx.conf /opt/nginx/nginx.conf
 ADD static /www/static
 
