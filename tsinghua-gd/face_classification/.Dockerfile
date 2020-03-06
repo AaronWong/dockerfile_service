@@ -1,6 +1,7 @@
 # https://github.com/oarriaga/face_classification/blob/dependabot/pip/tensorflow-1.15.2/Dockerfile
 FROM ubuntu:18.04
 
+ENV DEBIAN_FRONTEND=noninteractive
 RUN apt-get -y update && apt-get install -y git python3-pip python3-dev python3-tk vim procps curl
 
 #Face classificarion dependencies & web application
