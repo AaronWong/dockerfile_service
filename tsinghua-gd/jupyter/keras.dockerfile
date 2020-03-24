@@ -63,7 +63,7 @@ RUN pip3 install -U setuptools \
         jupyterlab \
         tqdm \
         matplotlib \
-        tensorflow-gpu==1.15.0 \
+        tensorflow-gpu==1.14.0 \
         keras==2.2.4
         
 # 安装服务常用包
