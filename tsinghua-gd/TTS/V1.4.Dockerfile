@@ -7,24 +7,14 @@ LABEL maintainer Aaron "aaronwlj@foxmail.com"
 RUN apt-get -y update && \
     DEBIAN_FRONTEND=noninteractive \
     apt-get install -y --no-install-recommends \
+        python3-dev \
+        python3-pip \
         git \
         g++ \
         make \
         wget \
         unzip \
         vim \
-        zlib*
-        
-# Install python3.7.4
-WORKDIR /tmp/
-RUN wget https://www.python.org/ftp/python/3.7.4/Python-3.7.4.tgz && \
-         tar -zxvf Python-3.7.4.tgz
-WORKDIR /tmp/Python-3.7.4
-RUN ./configure && make && make install && \
-    rm /usr/bin/python3 && \
-    ln -s /usr/bin/python3.7 /usr/bin/python3
-    
-RUN apt-get install -y --no-install-recommends \
         build-essential \
         libssl-dev \
         libffi-dev \
@@ -35,4 +25,49 @@ RUN apt-get install -y --no-install-recommends \
         libasound-dev \
         portaudio19-dev \
         libportaudio2 \
-        libportaudiocpp0
+        libportaudiocpp0         
+        
+# pip 升级
+RUN python3 -m pip install --upgrade pip
+
+# 安装基础库
+RUN pip3 install -U setuptools
+RUN pip3 --no-cache-dir install \
+      numpy \
+      pandas \
+      scipy \
+      scikit-learn \
+      tqdm \
+      matplotlib \
+      jupyterlab \
+      librosa \
+      Unidecode
+
+RUN pip3 --no-cache-dir install \
+      jieba3k \
+      pypinyin \
+      pydub \
+      sounddevice \
+      falcon \
+      inflect
+
+RUN pip3 --no-cache-dir install pyaudio
+RUN pip3 --no-cache-dir install tensorflow-gpu==1.14.0
+
+# 安装服务常用包
+RUN pip3 --no-cache-dir install \
+    flask \
+    flask-restful \
+    flask_jsonrpc \
+    fire \
+    requests_toolbelt
+
+# 删除 apt lists
+RUN rm -rf /var/lib/apt/lists/*
+
+# 终端设置
+# 默认值是dumb，这时在终端操作时可能会出现：terminal is not fully functional
+ENV TERM xterm
+
+# 解决时区问题
+ENV TZ "Asia/Shanghai"
