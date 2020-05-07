@@ -1,5 +1,5 @@
 # Pull base image.
-FROM nvidia/cuda:10.0-cudnn7-devel-ubuntu18.04
+FROM registry.cn-shenzhen.aliyuncs.com/tsinghua_gd/tts:base
 
 LABEL maintainer Aaron "aaronwlj@foxmail.com"
 
@@ -33,7 +33,7 @@ RUN python3 -m pip install --upgrade pip
 # 安装基础库
 RUN pip3 install -U setuptools
 RUN pip3 --no-cache-dir install \
-      numpy \
+      numpy==1.16.4 \
       pandas \
       scipy \
       scikit-learn \
