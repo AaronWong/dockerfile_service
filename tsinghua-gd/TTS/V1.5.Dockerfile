@@ -7,14 +7,6 @@ LABEL maintainer Aaron "aaronwlj@foxmail.com"
 RUN apt-get -y update && \
     DEBIAN_FRONTEND=noninteractive \
     apt-get install -y --no-install-recommends \
-        python3-dev \
-        python3-pip \
-        git \
-        g++ \
-        make \
-        wget \
-        unzip \
-        vim \
         build-essential \
         libssl-dev \
         libffi-dev \
