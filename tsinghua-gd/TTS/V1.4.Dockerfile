@@ -12,7 +12,8 @@ RUN apt-get -y update && \
         make \
         wget \
         unzip \
-        vim
+        vim \
+        zlib*
         
 # Install python3.7.4
 WORKDIR /tmp/
