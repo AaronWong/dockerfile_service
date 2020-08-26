@@ -16,7 +16,7 @@ RUN pip3 --no-cache-dir install \
     matplotlib \
     imgaug
 
-RUN pip3 install--pre torch==1.7.0.dev20200819 torchvision -f https://download.pytorch.org/whl/nightly/cu102/torch_nightly.html
+RUN pip3 install --pre torch==1.7.0.dev20200819 torchvision -f https://download.pytorch.org/whl/nightly/cu102/torch_nightly.html
 
 RUN apt-get -y update && \
     apt-get install -y --no-install-recommends \
