@@ -1,6 +1,6 @@
 FROM nvidia/cuda:10.2-cudnn7-devel-ubuntu16.04
 
-ENV TORCH_CUDA_ARCH_LIST=5.2 6.0. 6.1 7.0 7.5 8.0+PTX
+ENV TORCH_CUDA_ARCH_LIST "5.2 6.0. 6.1 7.0 7.5 8.0+PTX"
 RUN apt-get update
 RUN apt-get install python3-pip -y
 RUN ln -s /usr/bin/python3 /usr/bin/python
