@@ -1,4 +1,4 @@
-FROM nvidia/cuda:10.2-cudnn7-devel-ubuntu16.04
+FROM nvidia/cuda:10.2-cudnn7-devel-ubuntu18.04
 
 ENV TORCH_CUDA_ARCH_LIST "5.2 6.0. 6.1 7.0 7.5 8.0+PTX"
 RUN apt-get update
