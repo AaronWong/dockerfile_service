@@ -17,18 +17,6 @@ RUN pip install setproctitle pytz ipython
 RUN apt-get install libglib2.0-0 libsm6 libxrender1 -y
 RUN pip install dominate requests opencv-python==3.4.5.20
 
-#pix2pixHD, required for initializing training
-RUN git clone https://github.com/NVIDIA/pix2pixHD /pix2pixHD
-
-#vid2vid install
-RUN git clone https://github.com/NVIDIA/vid2vid /vid2vid
-WORKDIR /vid2vid
-#download flownet2 model dependencies
-#WARNING: we had an instance where these scripts needed to be re-run after the docker instance was launched
-RUN python scripts/download_flownet2.py
-RUN python scripts/download_models_flownet2.py
-WORKDIR /
-
 # 安装基础库
 RUN pip --no-cache-dir install \
     numpy \
