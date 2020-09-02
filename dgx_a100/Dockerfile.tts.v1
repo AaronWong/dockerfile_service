@@ -44,14 +44,16 @@ RUN pip3 --no-cache-dir install \
       
 # 安装服务常用包
 RUN pip3 --no-cache-dir install \
-    flask \
-    flask-restful \
-    flask_jsonrpc \
-    fire \
-    requests_toolbelt
+    flask==1.1.1 \
+    flask-restful==0.3.7 \
+    flask_jsonrpc==0.3.1 \
+    fire==0.2.1 \
+    requests_toolbelt==0.9.1
 
 # 删除 apt lists
 RUN rm -rf /var/lib/apt/lists/*
+
+ENV TF_ENABLE_DEPRECATION_WARNINGS 1
 
 # 终端设置
 # 默认值是dumb，这时在终端操作时可能会出现：terminal is not fully functional
