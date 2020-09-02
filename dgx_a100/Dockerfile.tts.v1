@@ -32,7 +32,13 @@ RUN pip3 --no-cache-dir install \
       falcon \
       inflect \
       librosa \
-      Unidecode
+      Unidecode \
+      aeneas \
+      jieba \
+      recognizers-text-suite \
+      spacy==2.2.0 \
+      neuralcoref \
+      textacy  
       
 # 安装服务常用包
 RUN pip3 --no-cache-dir install \
