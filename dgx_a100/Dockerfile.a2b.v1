@@ -1,0 +1,82 @@
+From nvcr.io/nvidia/pytorch:20.08-py3
+
+LABEL maintainer Aaron "aaronwlj@foxmail.com"
+
+# Install dependencies
+RUN apt-get -y update && \
+    apt-get install -y --no-install-recommends \
+    software-properties-common \
+    dirmngr \
+    apt-transport-https \
+    lsb-release \
+    ca-certificates \
+    openssh-server
+    
+RUN add-apt-repository "deb http://security.ubuntu.com/ubuntu xenial-security main"
+RUN apt-get -y update && \
+    DEBIAN_FRONTEND=noninteractive \
+    apt-get install -y --no-install-recommends \
+        git \
+        g++ \
+        make \
+        wget \
+        unzip \
+        build-essential \
+        pkg-config \
+        libatlas-base-dev \
+        gfortran \
+        libgtk2.0-dev \
+        libavcodec-dev \
+        libavformat-dev \
+        libswscale-dev \
+        libjpeg-dev \
+        libpng-dev \
+        libtiff-dev \
+        libjasper-dev \
+        libv4l-dev \
+        ffmpeg \
+        vim
+        
+# pip 升级
+# RUN python3 -m pip install --upgrade pip
+        
+# 安装服务常用包
+RUN pip3 --no-cache-dir install \
+    flask==1.1.1 \
+    flask-restful==0.3.7 \
+    flask_jsonrpc==0.3.1 \
+    fire==0.2.1 \
+    requests_toolbelt==0.9.1
+
+# Audio2BodyDynamics requirements
+RUN pip3 --no-cache-dir install \
+  certifi==2018.8.24 \
+  cycler==0.10.0 \
+  kiwisolver==1.0.1 \
+  matplotlib==3.0.0 \
+  numpy==1.15.2 \
+  Pillow==5.3.0 \
+  pyparsing==2.2.2 \
+  python-dateutil==2.7.3 \
+  scikit-learn==0.20.0 \
+  scipy==1.1.0 \
+  six==1.11.0 \
+  sklearn==0.0 \
+  torch==0.4.1 \
+  torchvision==0.2.1 \
+  opencv-python==3.4.3.18 \
+  librosa==0.7.1
+  pandas==0.24.2 \
+  jupyterlab \
+  tqdm \
+  imgaug
+
+# 删除 apt lists
+RUN rm -rf /var/lib/apt/lists/*
+
+# 终端设置
+# 默认值是dumb，这时在终端操作时可能会出现：terminal is not fully functional
+ENV TERM xterm
+
+# 解决时区问题
+ENV TZ "Asia/Shanghai"
