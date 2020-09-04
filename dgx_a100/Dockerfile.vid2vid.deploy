@@ -1,4 +1,4 @@
-From registry.cn-shenzhen.aliyuncs.com/dgx_a100/vid2vid:pytorch170
+From registry.cn-shenzhen.aliyuncs.com/dgx_a100/vid2vid:torch170
 
 LABEL maintainer Aaron "aaronwlj@foxmail.com"
 
