@@ -1,0 +1,5 @@
+From nvcr.io/nvidia/tensorflow:20.08-tf2-py3
+
+LABEL maintainer Aaron "aaronwlj@foxmail.com"
+
+RUN pip3 --no-cache-dir install keras
