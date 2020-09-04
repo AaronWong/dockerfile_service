@@ -61,8 +61,7 @@ RUN pip3 install -U setuptools \
         imgaug \
         librosa \
         ipywidgets \
-        keras \
-        redis
+        keras==2.2.5
 
 ENV TF_ENABLE_DEPRECATION_WARNINGS 1
 
@@ -72,7 +71,8 @@ RUN pip3 --no-cache-dir install \
     flask-restful==0.3.7 \
     flask_jsonrpc==0.3.1 \
     fire==0.2.1 \
-    requests_toolbelt==0.9.1
+    requests_toolbelt==0.9.1 \
+    redis
 
 # Install OpenCV
 RUN pip3 --no-cache-dir install opencv-python==3.4.5.20
