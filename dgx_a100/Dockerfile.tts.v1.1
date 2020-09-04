@@ -3,12 +3,6 @@ From registry.cn-shenzhen.aliyuncs.com/dgx_a100/tts:v1
 LABEL maintainer Aaron "aaronwlj@foxmail.com"
 
 RUN pip3 --no-cache-dir install \
-	xlrd==1.2.0 \
-	numba==0.48.0 \
-	openpyxl \
-	xlwt \
-	umap-learn \
-        llvmlite==0.28.0 \
         pysrt
 
 ENV LC_ALL C.UTF-8
