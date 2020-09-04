@@ -61,7 +61,8 @@ RUN pip3 install -U setuptools \
         imgaug \
         librosa \
         ipywidgets \
-        keras
+        keras \
+        redis
 
 ENV TF_ENABLE_DEPRECATION_WARNINGS 1
 
