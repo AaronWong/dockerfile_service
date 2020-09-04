@@ -1,0 +1,22 @@
+From registry.cn-shenzhen.aliyuncs.com/dgx_a100/vid2vid:pytorch170
+
+LABEL maintainer Aaron "aaronwlj@foxmail.com"
+
+# 安装服务常用包
+RUN pip3 --no-cache-dir install \
+    flask==1.1.1 \
+    flask-restful==0.3.7 \
+    flask_jsonrpc==0.3.1 \
+    fire==0.2.1 \
+    requests_toolbelt==0.9.1 \
+    redis
+    
+# 删除 apt lists
+RUN rm -rf /var/lib/apt/lists/*
+
+# 终端设置
+# 默认值是dumb，这时在终端操作时可能会出现：terminal is not fully functional
+ENV TERM xterm
+
+# 解决时区问题
+ENV TZ "Asia/Shanghai"
