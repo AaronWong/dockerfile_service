@@ -35,11 +35,11 @@ RUN pip install av
 RUN git clone https://github.com/nvlabs/imaginaire /imaginaire
 RUN cd /imaginaire
 # Install correlation.
-COPY imaginaire/third_party/correlation correlation
-RUN cd correlation && rm -rf build dist *-info && python setup.py install
+# COPY imaginaire/third_party/correlation correlation
+# RUN cd correlation && rm -rf build dist *-info && python setup.py install
 # Install channelnorm.
-COPY imaginaire/third_party/channelnorm channelnorm
-RUN cd channelnorm && rm -rf build dist *-info && python setup.py install
+# COPY imaginaire/third_party/channelnorm channelnorm
+# RUN cd channelnorm && rm -rf build dist *-info && python setup.py install
 # Install resample2d.
 COPY imaginaire/third_party/resample2d resample2d
-RUN cd resample2d && rm -rf build dist *.egg-info && python setup.py install
+# RUN cd resample2d && rm -rf build dist *.egg-info && python setup.py install
