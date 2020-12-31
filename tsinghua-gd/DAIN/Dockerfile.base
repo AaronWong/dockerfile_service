@@ -19,13 +19,13 @@ RUN /root/.local/bin/pip3.6 install pillow scipy==1.1.0
 RUN mkdir /DAIN
 RUN git clone https://github.com/baowenbo/DAIN.git /DAIN
 
-RUN cd /DAIN/my_package && ./build.sh
-RUN cd /DAIN/PWCNet/correlation_package_pytorch1_0 && ./build.sh
+# RUN cd /DAIN/my_package && ./build.sh
+# RUN cd /DAIN/PWCNet/correlation_package_pytorch1_0 && ./build.sh
 
-RUN mkdir /DAIN/model_weights
-RUN cd /DAIN/model_weights && wget http://vllab1.ucmerced.edu/~wenbobao/DAIN/best.pth
+# RUN mkdir /DAIN/model_weights
+# RUN cd /DAIN/model_weights && wget http://vllab1.ucmerced.edu/~wenbobao/DAIN/best.pth
 
-RUN mkdir /DAIN/sharedfs
+# RUN mkdir /DAIN/sharedfs
 
-CMD cd /DAIN/ && CUDA_VISIBLE_DEVICES=0 python3.6 infer.py
+# CMD cd /DAIN/ && CUDA_VISIBLE_DEVICES=0 python3.6 infer.py
 # docker run --gpus all --rm -ti -v ~/docker:/DAIN/sharedfs --name dain miscoriadev/dain:1.1.0
