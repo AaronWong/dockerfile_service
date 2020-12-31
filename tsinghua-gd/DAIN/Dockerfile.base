@@ -17,7 +17,7 @@ RUN /root/.local/bin/pip3.6 install -U https://download.pytorch.org/whl/cu100/to
 RUN /root/.local/bin/pip3.6 install pillow scipy==1.1.0
 
 RUN mkdir /DAIN
-RUN git clone https://github.com/baowenbo/DAIN.git /DAIN
+RUN git clone https://github.com/AaronWong/DAIN.git /DAIN
 
 # RUN cd /DAIN/my_package && ./build.sh
 # RUN cd /DAIN/PWCNet/correlation_package_pytorch1_0 && ./build.sh
