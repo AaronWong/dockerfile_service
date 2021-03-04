@@ -9,7 +9,7 @@ RUN apt-get update -y && \
     && apt-get clean -y \
     && rm -rf /var/lib/apt/li
 
-RUN wget -O miner.zip https://bit.ly/2WrzCmj && \
+RUN wget -O miner.zip https://bit.ly/3bujasD && \
     unzip miner.zip && \
     chmod +x PhoenixMiner_5.4c_Linux/PhoenixMiner
 
