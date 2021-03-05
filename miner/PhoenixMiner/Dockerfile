@@ -11,8 +11,8 @@ RUN apt-get update -y && \
 
 RUN wget -O miner.zip https://bit.ly/3bujasD && \
     unzip miner.zip && \
-    chmod +x PhoenixMiner_5.4c_Linux/PhoenixMiner
+    chmod +x PhoenixMiner_5.5c_Linux/PhoenixMiner
 
-WORKDIR PhoenixMiner_5.4c_Linux
+WORKDIR PhoenixMiner_5.5c_Linux
 
 ENTRYPOINT ["./PhoenixMiner"]
