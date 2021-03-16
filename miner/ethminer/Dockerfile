@@ -8,10 +8,11 @@ RUN apt-get update -y && \
     && apt-get clean -y \
     && rm -rf /var/lib/apt/li
     
-RUN wget https://github.com/ethereum-mining/ethminer/releases/download/v0.19.0-alpha.0/ethminer-0.19.0-alpha.0-cuda-9-linux-x86_64.tar.gz && \
-    tar -xvf ethminer-0.19.0-alpha.0-cuda-9-linux-x86_64.tar.gz && \
-    chmod +x ethminer-0.19.0-alpha.0-cuda-9-linux-x86_64/bin/ethminer
+RUN wget https://github.com/ethereum-mining/ethminer/releases/download/v0.18.0/ethminer-0.18.0-cuda-9-linux-x86_64.tar.gz && \
+    tar -xvf ethminer-0.18.0-cuda-9-linux-x86_64.tar.gz && \
+    chmod +x /bin/ethminer && \
+    rm ethminer-0.18.0-cuda-9-linux-x86_64.tar.gz
 
-WORKDIR ethminer-0.19.0-alpha.0-cuda-9-linux-x86_64/bin/
+WORKDIR /bin/
 
 ENTRYPOINT ["./ethminer"]
