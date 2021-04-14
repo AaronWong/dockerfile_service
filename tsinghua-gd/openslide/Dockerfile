@@ -11,3 +11,7 @@ RUN pip install openslide-python flask
     
 RUN git clone https://github.com/openslide/openslide-python.git
 WORKDIR /openslide-python
+
+RUN apt-get install libopenslide-dev -y
+# 删除 apt lists
+RUN rm -rf /var/lib/apt/lists/*
