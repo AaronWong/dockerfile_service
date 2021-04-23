@@ -16,7 +16,7 @@ RUN pip3 install fastapi \
     uvicorn \
     redis \
     minio \
-    opencv-python==3.4.5.20 \
+    opencv-python \
     tensorflow-gpu==2.4.1
     
 # 删除 apt lists
