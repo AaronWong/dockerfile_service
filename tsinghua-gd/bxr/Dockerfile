@@ -9,7 +9,7 @@ RUN ln -s /usr/bin/python3 /usr/bin/python
 RUN pip3 install --upgrade pip
 RUN pip install -U setuptools
 RUN pip install openslide-python flask
-RUN apt-get install libopenslide-dev -y
+RUN DEBIAN_FRONTEND=noninteractive apt-get install --no-install-recommends  libopenslide-dev -y
 
 # bxr
 RUN pip3 install fastapi \
