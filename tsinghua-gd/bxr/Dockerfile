@@ -17,7 +17,8 @@ RUN pip3 install fastapi \
     redis \
     minio \
     opencv-python \
-    tensorflow-gpu==2.4.1
+    tensorflow-gpu==2.4.1 \
+    jupyter
     
 # 删除 apt lists
 RUN rm -rf /var/lib/apt/lists/*
