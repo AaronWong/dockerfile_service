@@ -18,7 +18,11 @@ RUN pip3 install fastapi \
     minio \
     opencv-python \
     tensorflow-gpu==2.4.1 \
-    jupyter
-    
+    jupyter \
+    tqdm \
+    matplotlib
+
+RUN apt-get install libgl1-mesa-dev -y
+
 # 删除 apt lists
 RUN rm -rf /var/lib/apt/lists/*
