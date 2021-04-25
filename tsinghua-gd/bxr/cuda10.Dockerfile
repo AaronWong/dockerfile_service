@@ -1,4 +1,4 @@
-FROM nvidia/cuda:10.2-cudnn7-runtime-ubuntu18.04
+FROM nvidia/cuda:10.1-cudnn7-runtime-ubuntu18.04
 
 # Install all dependencies for openslide
 RUN apt-get update && \
@@ -17,7 +17,7 @@ RUN pip3 install fastapi \
     redis \
     minio \
     opencv-python \
-    tensorflow-gpu==2.3.0 \
+    tensorflow-gpu==2.3.2 \
     jupyter \
     tqdm \
     matplotlib
