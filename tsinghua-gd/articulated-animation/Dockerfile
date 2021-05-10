@@ -17,4 +17,8 @@ RUN pip3 install  \
   scipy==1.1.0 \
   torch==1.4.0 \
   torchvision==0.2.1 \
-  tqdm==4.24.0
+  tqdm==4.24.0 \
+  librosa==0.7.0 \
+  opencv-contrib-python>=4.2.0.34 \
+  opencv-python==4.1.0.25 \
+  numba==0.48
