@@ -21,4 +21,10 @@ RUN pip3 install  \
   librosa==0.7.0 \
   opencv-contrib-python>=4.2.0.34 \
   opencv-python==4.1.0.25 \
-  numba==0.48
+  numba==0.48 \
+  requests \
+  tensorflow==1.14 \
+  redis \
+  minio \
+  fastapi \
+  uvicorn
