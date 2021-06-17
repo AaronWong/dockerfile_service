@@ -2,6 +2,8 @@ FROM apache/airflow:2.1.0
 
 LABEL maintainer Aaron "aaronwlj@foxmail.com"
 
+USER root
+
 RUN apt-get update && apt-get install -y --no-install-recommends \
     gnupg2 curl ca-certificates && \
     curl -fsSL https://developer.download.nvidia.com/compute/cuda/repos/ubuntu1804/x86_64/7fa2af80.pub | apt-key add - && \
