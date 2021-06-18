@@ -73,6 +73,14 @@ RUN apt-get -y update && \
     ffmpeg \
     python3-tk
 
+# 安装 DLIB
+RUN cd /root/ && \
+    git clone https://github.com/davisking/dlib.git && \
+    cd /root/dlib && \
+    python3 setup.py install && \
+    cd .. && \
+    rm -r /root/dlib
+    
 RUN pip3 install -U setuptools \
     && pip3 --no-cache-dir install \
         numpy \
@@ -86,6 +94,7 @@ RUN pip3 install -U setuptools \
         face_recognition \
         torch \
         torchvision \
+        tensorboardX \
         tensorflow-gpu==1.15
 
 USER aiflow
