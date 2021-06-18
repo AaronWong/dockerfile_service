@@ -83,4 +83,9 @@ RUN pip3 install -U setuptools \
         matplotlib \
         opencv-python==3.4.5.20 \
         scenedetect \
-        face_recognition
+        face_recognition \
+        torch \
+        torchvision \
+        tensorflow-gpu==1.15
+
+USER aiflow
