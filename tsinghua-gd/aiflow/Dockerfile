@@ -71,6 +71,8 @@ RUN apt-get -y update && \
     libopencv-dev \
     vim \
     git \
+    g++ \
+    make \
     ffmpeg \
     python3-tk
 
