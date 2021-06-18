@@ -61,5 +61,26 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     libcudnn8-dev=$CUDNN_VERSION-1+cuda11.2 \
     && apt-mark hold libcudnn8 && \
     rm -rf /var/lib/apt/lists/*
-    
 
+
+######################################
+## detect
+RUN apt-get -y update && \
+    DEBIAN_FRONTEND=noninteractive \
+    apt-get install -y --no-install-recommends \
+    libopencv-dev \
+    vim \
+    ffmpeg \
+    python3-tk
+
+RUN pip3 install -U setuptools \
+    && pip3 --no-cache-dir install \
+        numpy \
+        pandas \
+        scipy \
+        scikit-learn \
+        tqdm \
+        matplotlib \
+        opencv-python==3.4.5.20 \
+        scenedetect \
+        face_recognition
