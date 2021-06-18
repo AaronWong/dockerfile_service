@@ -70,6 +70,7 @@ RUN apt-get -y update && \
     apt-get install -y --no-install-recommends \
     libopencv-dev \
     vim \
+    git \
     ffmpeg \
     python3-tk
 
