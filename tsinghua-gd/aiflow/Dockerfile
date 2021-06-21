@@ -76,6 +76,12 @@ RUN apt-get -y update && \
     ffmpeg \
     python3-tk
 
+# replace cmake as old version has CUDA variable bugs
+RUN wget https://github.com/Kitware/CMake/releases/download/v3.14.2/cmake-3.14.2-Linux-x86_64.tar.gz && \
+tar xzf cmake-3.14.2-Linux-x86_64.tar.gz -C /opt && \
+rm cmake-3.14.2-Linux-x86_64.tar.gz
+ENV PATH="/opt/cmake-3.14.2-Linux-x86_64/bin:${PATH}"
+
 # 安装 DLIB
 RUN cd /root/ && \
     git clone https://github.com/davisking/dlib.git && \
