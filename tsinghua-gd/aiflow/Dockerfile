@@ -70,6 +70,7 @@ RUN apt-get -y update && \
     apt-get install -y --no-install-recommends \
     libopencv-dev \
     vim \
+    wget \
     git \
     g++ \
     make \
