@@ -91,20 +91,4 @@ RUN cd /root/ && \
     cd .. && \
     rm -r /root/dlib
     
-RUN pip install -U setuptools \
-    && pip --no-cache-dir install \
-        numpy \
-        pandas \
-        scipy \
-        scikit-learn \
-        tqdm \
-        matplotlib \
-        opencv-python==3.4.5.20 \
-        scenedetect \
-        face_recognition \
-        torch \
-        torchvision \
-        tensorboardX \
-        tensorflow-gpu==1.15
-
 USER aiflow
