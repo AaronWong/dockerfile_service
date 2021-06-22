@@ -91,8 +91,8 @@ RUN cd /root/ && \
     cd .. && \
     rm -r /root/dlib
     
-RUN pip3 install -U setuptools \
-    && pip3 --no-cache-dir install \
+RUN pip install -U setuptools \
+    && pip --no-cache-dir install \
         numpy \
         pandas \
         scipy \
