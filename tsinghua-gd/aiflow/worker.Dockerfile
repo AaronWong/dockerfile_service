@@ -2,6 +2,7 @@ FROM registry.cn-shenzhen.aliyuncs.com/tsinghua_gd/airflow:2.1.0_base
 
 USER root
 
+ENV PATH=${PATH}:/root/.local/bin
 RUN pip install --upgrade pip
 RUN pip install -U setuptools \
     && pip install \
