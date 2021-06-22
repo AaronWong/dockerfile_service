@@ -5,7 +5,7 @@ USER root
 ENV PATH=${PATH}:/root/.local/bin
 RUN pip install --upgrade pip
 RUN pip install -U setuptools \
-    && pip install \
+    && pip --no-cache-dir --user install \
         numpy \
         pandas \
         scipy \
